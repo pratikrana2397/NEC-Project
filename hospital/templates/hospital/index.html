@@ -1,0 +1,15 @@
+{% extends 'hospital/base.html' %}
+{%block title%}Random{% endblock %}
+{% block body %}
+	{% if doctor_list %}
+    		<ul>
+    		
+        		<li><a href="{% url 'hospital:detail' %}">{{ doctor_list.name}}</a></li>
+			<li>{{doc.address}}</li>
+			<li>{{doc.profile_pic}}</li>
+    		
+    		</ul>
+	{% else %}
+    		<p>No doctors are available.</p>
+	{% endif %}
+{% endblock %}

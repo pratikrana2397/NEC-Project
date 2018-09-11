@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Hospital Management System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{% load staticfiles %}		
+		<link rel="stylesheet" type="text/css" href="{% static 'hospital/css/main.css' %}" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="{% url 'hospital:index' %}">HMS <span>by Group No.1</span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="{% url 'hospital:index' %}">Home</a></li>
+					<li><a href="generic.html">Generic</a></li>
+					<li><a href="elements.html">Elements</a></li>
+					<li><a href=""></a>Admin Login</li>
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+			<section class="banner full">
+				<article>
+					<img src="{% static 'hospital/images/slide01.jpg' %}" alt="" />
+					<div class="inner">
+						<header>
+							<p>Welcome To Hospital Managmet System V1.0</p>
+							<h1>HMS</h1>
+						</header>
+					</div>
+				</article>
+				<article>
+					<img src="{% static 'hospital/images/slide02.jpg' %}" alt="" />
+					<div class="inner">
+						<header>
+							<p>Welcome To Hospital Managmet System V1.0</p>
+							<h1>HMS</h1>
+						</header>
+					</div>
+				</article>
+				<article>
+					<img src="{% static 'hospital/images/slide03.jpg' %}"  alt="" />
+					<div class="inner">
+						<header>
+						<p>Welcome To Hospital Managmet System V1.0</p>
+							<h1>HMS</h1>							
+						</header>
+					</div>
+				</article>
+				<article>
+					<img src="{% static 'hospital/images/slide04.jpg' %}"  alt="" />
+					<div class="inner">
+						<header>
+							<p>Welcome To Hospital Managmet System V1.0</p>
+							<h1>HMS</h1>						
+						</header>
+					</div>
+				</article>
+				<article>
+					<img src="{% static 'hospital/images/slide05.jpg' %}"  alt="" />
+					<div class="inner">
+						<header>
+							<p>Welcome To Hospital Managmet System V1.0</p>
+							<h1>HMS</h1>
+						</header>
+					</div>
+				</article>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div class="grid-style">
+
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="{% static 'hospital/images/pic02.jpg' %}" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<p></p>
+										<h2>Doctors Panel</h2>
+									</header>
+									<p>Registerd doctors can acces all their priveleges from this portal , check their appointments,provide feedbacks to patient , update their details etc. New doctors can register themselves if not with registered user id and password .</p>
+									<footer class="align-center">
+										<a href="{% url 'hospital:doctor-add' %}" class="button alt">Doctors</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="{% static 'hospital/images/pic03.jpg' %}" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<p></p>
+										<h2>Patients Panel</h2>
+									</header>
+									<p>Registerd patients can acces all their priveleges from this portal , schedule their appointments,generate their bill , update their details,look for doctors availability etc. New patients can register themselves if not with registered user id and password .</p>
+									<footer class="align-center">
+										<a href="#" class="button alt">Patient</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+		
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					Developed By: Pratik Rana
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'hospital/js/jquery.min.js' %}"></script>
+			<script src="{% static 'hospital/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'hospital/js/skel.min.js' %}"></script>
+			<script src="{% static 'hospital/js/util.js' %}"></script>
+			<script src="{% static 'hospital/js/main.js' %}"></script>
+
+	</body>
+</html>
