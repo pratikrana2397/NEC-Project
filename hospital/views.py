@@ -1,9 +1,9 @@
 from django.shortcuts import get_object_or_404 ,render,redirect
-from .models import doctor
+from .models import doctor,Patient
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth import authenticate,login
-from django.views import generic
+from django.views.generic.list import ListView 
 from django.views.generic import View 
 from .forms import UserForm
 
@@ -11,19 +11,42 @@ def index(request):
      
     return render(request,'hospital/home.html')
 	
-
+class doctorListView(ListView):
+      model = doctor
+      def get_queryset(self):
+          return doctor.objects.all()
+			
 class doctorcreate(CreateView):
       model = doctor
-      fields =['name','sex','dob','phone_no','qualifications','address','speciality','user']		
+      fields =['profile_pic','name','sex','dob','phone_no','qualifications','address','speciality','user']		
 
 class doctorupdate(UpdateView):
       model = doctor
-      fields =['name','sex','dob','phone_no','qualifications','address','speciality']	
-
+      fields =['profile_pic','name','sex','dob','phone_no','qualifications','address','speciality','user']	
+      
 class doctordelete(DeleteView):
       model = doctor
-      success_url=reverse_lazy('hospital:index')	
+      success_url =reverse_lazy('hospital:index')	
+
+class PatientListView(ListView):
+      model = Patient
+      def get_queryset(self):
+          return Patient.objects.all()
+			
+
+class Patientcreate(CreateView):
+      model = Patient
+      fields =['profile_pic','name','sex','dob','phone_no','problem','address','symptomps','user']		      
+
+class Patientupdate(UpdateView):
+      model = Patient
+      fields =['profile_pic','name','sex','dob','phone_no','problem','address','symptomps','user']	
       
+class Patientdelete(DeleteView):
+      model = Patient
+      success_url=reverse_lazy('hospital:index')	
+
+
 class UserFormView(View):
       form_class = UserForm
       template_name = 'hospital/registrations_form.html'		

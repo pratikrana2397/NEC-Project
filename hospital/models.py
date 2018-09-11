@@ -37,7 +37,7 @@ class doctor(models.Model):
 	speciality = models.TextField(max_length=100)
 	user=models.ForeignKey(user,on_delete=models.CASCADE)
 	def get_absolute_url(self):
-            return reverse('hospital:index',kwargs={'pk':self.pk})
+            return reverse('hospital:index')
 	def __str__(self):
 	    return self.name
 
@@ -47,15 +47,18 @@ class Patient(models.Model):
 		('F','Female'),
 		('T','Transgender'),
 		)
-	profile_pic=models.CharField(max_length=1000)
+	profile_pic=models.FileField()
 	name = models.CharField(max_length=100)
 	sex=models.CharField(max_length=1,choices=sex)
 	dob=models.DateField()
 	phone_no=models.CharField(max_length=10)
-	problem=models.CharField(max_length=250)
+	problem=models.TextField(max_length=250)
 	address=models.CharField(max_length=250)
-	symptomps = models.CharField(max_length=100)
+	symptomps = models.TextField(max_length=100)
 	user=models.ForeignKey(user,on_delete=models.CASCADE)
+
+	def get_absolute_url(self):
+	    return reverse('hospital:index')		
 
 	def __str__(self):
 		return self.name

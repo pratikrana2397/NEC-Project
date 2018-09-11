@@ -1,0 +1,33 @@
+{% extends 'hospital/base.html' %}
+{% block title %}List of all Patients{% endblock %}
+{% block body %}
+
+<div class="container">
+  <h2>All Admitted patients in the database</h2>
+  <p></p>            
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+      	<th>Patient Id.</th>
+        <th>Name</th>
+        <th>Phone No.</th>
+        <th>Problem</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for patien in object_list %}
+      <tr>
+        <td>{{patien.id}}</td>
+        <td>{{patien.name}}</td>
+        <td>{{patien.phone_no}}</td>
+        <td>{{patien.problem}}</td>
+	<td><a href="{% url 'hospital:patient-delete' patien.id %}" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-trash"></span> Delete 
+        </a><a href="{% url 'hospital:patient-update' patien.id %}" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-edit"></span> Update
+        </a></td>
+     {% endfor %} 
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

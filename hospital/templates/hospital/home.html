@@ -21,8 +21,10 @@
 				<ul class="links">
 					<li><a href="{% url 'hospital:index' %}">Home</a></li>
 					<li><a href="generic.html">Generic</a></li>
-					<li><a href="elements.html">Elements</a></li>
-					<li><a href=""></a>Admin Login</li>
+					<!--<li><a href="elements.html">Elements</a></li>-->
+					<li><a href="{% url 'hospital:patient-list' %}">List Of Patients</a></li>
+					<li><a href="{% url 'hospital:doctor-list' %}">List Of Doctors</a></li>
+					
 				</ul>
 			</nav>
 
@@ -92,7 +94,7 @@
 									</header>
 									<p>Registerd doctors can acces all their priveleges from this portal , check their appointments,provide feedbacks to patient , update their details etc. New doctors can register themselves if not with registered user id and password .</p>
 									<footer class="align-center">
-										<a href="{% url 'hospital:doctor-add' %}" class="button alt">Doctors</a>
+										<a href="{% url 'hospital:doctor-add' %}" class="button alt">Doctor Registration</a>
 									</footer>
 								</div>
 							</div>
@@ -110,7 +112,7 @@
 									</header>
 									<p>Registerd patients can acces all their priveleges from this portal , schedule their appointments,generate their bill , update their details,look for doctors availability etc. New patients can register themselves if not with registered user id and password .</p>
 									<footer class="align-center">
-										<a href="#" class="button alt">Patient</a>
+										<a href="{% url 'hospital:patient-add' %}" class="button alt">Patient Registration</a>
 									</footer>
 								</div>
 							</div>
